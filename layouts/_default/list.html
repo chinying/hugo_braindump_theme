@@ -2,7 +2,7 @@
 <html>
 <body>
   {{ range .Data.Pages }}
-    <h1><a href={{ .Permalink }}>{{ .Title }}</a></h1>
+    <h1><a href={{ .Permalink }}>{{ .Title }}</a></h1> {{ dateFormat "Monday, Jan 2, 2006" .PublishDate }}
   {{ end }}
 </body>
 </html>
