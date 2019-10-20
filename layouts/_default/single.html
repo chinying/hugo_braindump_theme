@@ -6,5 +6,17 @@
 <body>
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+
+
+  <hr />
+  Cateogory
+  {{ .Params.Categories }}
+
+  <br />
+  Tags:
+  {{ range $k := .Params.Tags }}
+    [{{ $k }}]
+  {{ end }}
+
 </body>
 </html>
