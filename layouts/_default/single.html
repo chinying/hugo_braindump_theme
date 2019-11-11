@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{{ .Title }}</title>
-</head>
-<body>
-  {{ partial "head.html" . }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+{{ define "main" }}
+<article class="text-gray-700 mx-4 sm:mx-12">
+    <h1 class="font-bold text-3xl text-gray-700">{{ .Title }}</h1>
+    {{ .Content }}
+    <hr />
+    Cateogory
+    {{ .Params.Categories }}
 
-
-  <hr />
-  Cateogory
-  {{ .Params.Categories }}
-
-  <br />
-  Tags:
-  {{ range $k := .Params.Tags }}
-    [{{ $k }}]
-  {{ end }}
-
-</body>
-</html>
+    <br />
+    Tags:
+    {{ range $k := .Params.Tags }}
+      [{{ $k }}]
+    {{ end }}
+    </article>
+{{ end }}

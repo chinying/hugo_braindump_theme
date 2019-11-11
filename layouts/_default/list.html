@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
-  {{ range .Data.Pages }}
-    <h1><a href={{ .Permalink }}>{{ .Title }}</a></h1> {{ dateFormat "Monday, Jan 2, 2006" .PublishDate }}
-  {{ end }}
-</body>
-</html>
+{{ define "main" }}
+{{ range .Data.Pages }}
+    <article class="text-gray-700 mx-4 sm:mx-12 mb-4">
+        <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        {{ dateFormat "Monday, Jan 2, 2006" .PublishDate }}
+    </article>
+{{ end }}
+{{ end }}
